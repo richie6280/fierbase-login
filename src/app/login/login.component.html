@@ -1,0 +1,17 @@
+<p>login works!</p>
+<!-- <button (click)="goMember()">登入會員專區</button> -->
+
+<div class="container">
+    <div class="buttons" *ngIf="loginWay">
+        <button (click)="login('email')">Email登入</button>
+        <button (click)="login('phone')">電話登入</button>
+        <button (click)="login('facebook')">Facebook登入</button>
+        <button (click)="login('line')">Line登入</button>
+    </div>
+
+    <div class="login-input" *ngIf="!loginWay">
+        <input type="text" (keyup.enter)="loginGoogle($event.target.value)" *ngIf="emailInput">
+        <button (click)="previousStep()">返回</button>
+    </div>
+</div>
+
